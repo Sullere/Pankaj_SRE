@@ -18,3 +18,8 @@ jobs:
           pip install pytest
           python -m pytest -vv
           python -m py_compile pankaj.py
+      - name: Upload pankaj.py artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pankaj-app
+          path: pankaj.py
