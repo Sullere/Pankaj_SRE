@@ -1,6 +1,9 @@
 name: CI Pipeline
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,11 +21,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-      - name: Debug workspace
-        run: |
-         pwd
-         ls -la
           pip install pytest
 
+      - name: Debug workspace
+        run: |
+          pwd
+          ls -la
+
       - name: Run tests
-        run: pytest
+        run: python -m pytest -vv
+* `Debug workspace` step rakha gaya hai taaki `ls -la` se turant pata chale ki runner mein `test_*.py` ya `*_test.py` file maujood hai ya nahi[cite: 9].
+* `python -m pytest -vv` use kiya gaya hai taaki `3.11` environment ka `pytest` verbose output ke saath chale[cite: 9].
+
+Is file ko commit karne ke baad **Debug workspace** aur **Run tests** ke logs dekhein—agar `ls -la` mein aapki test file nahi dikh rahi toh wahi root reason hai ki `0 items` collect ho rahe hain[cite: 1, 9].
