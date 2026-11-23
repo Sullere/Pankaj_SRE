@@ -18,6 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+      - name: Debug workspace
+        run: |
+         pwd
+         ls -la
           pip install pytest
 
       - name: Run tests
