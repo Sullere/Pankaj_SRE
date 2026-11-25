@@ -146,6 +146,10 @@ def main():
         else:
             print("Invalid choice, 1 se 6 ke beech select karein.")
 
+@app.route("/healthz")
+def healthz():
+    return jsonify({"status": "ok"}), 200
+
 
 if __name__ == "__main__":
     main()

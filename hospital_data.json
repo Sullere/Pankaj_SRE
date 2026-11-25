@@ -1,0 +1,18 @@
+{
+  "doctors": [
+    {
+      "id": "D001",
+      "name": "Komal",
+      "specialization": "Gernal"
+    }
+  ],
+  "patients": [
+    {
+      "id": "P001",
+      "name": "Pankaj",
+      "age": 34,
+      "phone": "8810408830"
+    }
+  ],
+  "appointments": []
+}
