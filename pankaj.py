@@ -146,6 +146,10 @@ def main():
         else:
             print("Invalid choice, 1 se 6 ke beech select karein.")
 
+            from flask import Flask, jsonify
+
+app = Flask(__name__)
+
 @app.route("/healthz")
 def healthz():
     return jsonify({"status": "ok"}), 200
